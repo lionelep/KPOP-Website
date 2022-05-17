@@ -1,0 +1,222 @@
+:root {
+    --navygray: #16131c;
+    --lightgray: #a09c94;
+    --likewhite: #ebeaec;
+    --gray: #96939c;
+    --fadered: #9932cc;
+}
+
+.groups-section {
+    background-color: var(--gray);
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 8rem;
+}
+
+.groups-heading {
+    color: var(--likewhite);
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 3rem;
+}
+
+.groups {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    transform: translateY(80px);
+    padding: 0;
+    background-color: var(--gray);
+    height: auto;
+}
+
+.groups-cell {
+    flex: 0 1 250px;
+    max-width: 250px;
+    height: 275px;
+    margin: 2px;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.8);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); 
+    cursor: pointer;
+}
+
+.groups-cell_img {
+    object-fit: cover;
+    object-position: center;
+}
+
+.groups-cell_text {
+    height: 100%;
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-transform: uppercase;
+    color: var(--likewhite);
+    font-weight: 700;
+    font-size: 1rem;
+    transition: opacity 350ms;
+    text-shadow: 2px 2px 2px var(--navygray);
+}
+
+.groups-cell::before, .groups-cell::after, .groups-cell_img {
+    top: -50%;
+    width: 100%;
+    height: 200%;
+    display: block;
+    position: absolute;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); 
+    z-index: -1;
+}
+
+.groups-cell:hover {
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.2);
+    z-index: 99;
+    overflow: hidden;
+}
+
+.groups-cell:before {
+    content: '';
+    position: absolute;
+    opacity: 0.4;
+    width: 350px;
+    height: 70px;
+    background: var(--likewhite);
+    top: 50;
+    left: 0;
+    z-index: 1;
+    transform: rotate(45deg);
+    transition: transform 1.5s;
+}
+
+.groups-cell:hover:before {
+    transform: translate(-100px, 600%) rotate(45deg);
+    transition: transform 0.5s;
+}
+
+/* image pop up for gallery */
+.img-window {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-img {
+    max-height: 80vh;
+    max-width: 80vw;
+    z-index: 200;
+}
+
+.img-btn-next {
+    display: block;
+    font-size: 2rem;
+    padding: 8px 30px;
+    border-radius: 4px;
+    background-color: #111111;
+    position: fixed;
+    top: 48vh;
+    z-index: 500;
+    color: var(--likewhite);
+    cursor: pointer;
+    right: 0;
+}
+
+.img-btn-prev {
+    display: block;
+    font-size: 2rem;
+    padding: 8px 30px;
+    border-radius: 4px;
+    background-color: #111111;
+    position: fixed;
+    top: 48vh;
+    z-index: 500;
+    color: var(--likewhite);
+    cursor: pointer;
+}
+
+.img-btn-next:hover, .img-btn-prev:hover {
+    background-color: #282828;
+    transition: 0.2s ease-out;
+}
+
+
+@media screen and (min-width: 550px) and (max-width: 825px) {
+    .groups-cell:nth-child(3n) {
+        margin-right: calc(50% - 125px);
+        margin-left: calc(50% - 125px);
+    }
+
+    .groups-cell:nth-child(3) {
+        top: -70px;
+    }
+
+    .groups-cell:nth-child(4) {
+        top: -140px;
+    }
+    .groups-cell:nth-child(5) {
+        top: -140px;
+    }
+    .groups-cell:nth-child(6) {
+        top: -210px;
+    }
+    .groups-cell:nth-child(7) {
+        top: -280px;
+        margin-right: 250px;
+    }
+}
+
+@media screen and (min-width: 825px) and (max-width: 1100px) {
+    .groups-cell:nth-child(4) {
+        top: -70px;
+        margin-left: calc(50% - 275px);
+    }
+
+    .groups-cell:nth-child(5) {
+        margin-right: calc(50% - 275px);
+        position: relative;
+        top: -70px;
+    }
+
+    .groups-cell:nth-child(6) {
+        margin-left: calc(50% - 530px);
+        top: -140px;
+    }
+
+    .groups-cell:nth-child(7) {
+        margin-right: calc(50% - 275px);
+        top: -140px;
+    }
+    
+}
+
+@media screen and (min-width: 1100px) {
+    .groups-cell:nth-child(n + 5) {
+        position: relative;
+        top: -70px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .groups-cell {
+        margin: 50px 25px;
+    }
+
+}

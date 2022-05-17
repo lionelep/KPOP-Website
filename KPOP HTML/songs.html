@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Khula&family=Roboto&family=Tinos:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/730c3f6a0e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="musicstyle.css">
+    <title>Website Navbar</title>
+</head>
+<body>
+    <div class="nav-container">
+        <nav class="navbar">
+            <h1 id="navbar-logo">K HOME</h1>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-links">Home</a></li>
+                <li><a href="songs.html" class="nav-links">Songs</a></li>
+                <li><a href="videos.html" class="nav-links">Videos</a></li>
+                <li><a href="about.html" class="nav-links">About Us</a></li>
+                <li><a href="index.html" class="nav-links nav-links-btn">Sign Up</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    
+        
+            <h1>Check out songs from our groups!</h1> 
+            
+            <div class="music-container">
+                <div class="music-info">
+                    <h4 id="title">ON - BTS</h4>
+                    <div class="progress-container">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+
+                <audio src="music/ON.mp3" id="audio"></audio>
+
+                <div class="img-container">
+                    <img src="images/ON.jpg" alt="music-cover" id="cover" />
+                </div>
+
+                <div class="navigation">
+                    <button id="prev" class="action-btn">
+                        <i class="fas fa-backward"></i>
+                    </button>
+                    <button id="play" class="action-btn action-btn-big">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button id="next" class="action-btn">
+                        <i class="fas fa-forward"></i>
+                    </button>
+                </div>
+            </div>
+
+        
+    
+    <script src="musicscript.js"></script>
+</body>
+</html>
